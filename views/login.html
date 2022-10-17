@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <style>
+
+        h1 {
+            text-align: center;
+            color: green;
+        }
+
+        p {
+            text-align: center;
+            font-family: verdana;
+            font-size: 16px;
+        }
+
+        form {
+            border: 3px solid #f1f1f3;
+            text-align: center;
+        }
+    </style>
+
+    <title>Login</title>
+</head>
+
+<body>
+
+    <p>Please enter username and password to login</p>
+
+    <form action="/loggedin" method="POST">
+        <label for="uname">Username:</label><br>
+        <input title="Please enter in valid format" type="text" name="username"
+            placeholder="enter username" required><br><br>
+
+        <label for="pass">Password:</label><br>
+        <input minlength="8" type="text" name="password" placeholder="enter password" required><br><br>
+        <button class="btn btn-primary" type="submit" value="Submit">Login</button>
+    </form>
+
+</body>
+
+</html>

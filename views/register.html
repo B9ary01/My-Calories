@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        h1 {
+            color: green;
+            text-align: center;
+        }
+
+        form {
+            border: 3px solid #f1f1f3;
+            margin-left: 30%;
+            margin-right: 30%;
+            padding-left: 63px;
+            padding-right: 63px;
+            text-align: center;
+        }
+
+        p {
+            font-family: verdana;
+            font-size: 16px;
+            text-align: center;
+        }
+    </style>
+
+    <title>Register</title>
+    
+</head>
+
+<body>
+
+    <h1>
+        <bold>Register</bold>
+    </h1>
+
+    <p>Please enter all the required fields to register</p>
+
+    <form action="/registered" method="POST">
+        <label for="firstname">Firstname:</label><br>
+        <input type="text" name="fname" placeholder="enter firstname" required><br> <br>
+
+        <label for="lastname">Lastname:</label><br>
+        <input type="text" name="lname" placeholder="enter lastname" required><br> <br>
+
+        <label for="uname">Username:</label><br>
+        <input type="text" name="username" placeholder="enter username" required><br> <br>
+        <label for="upass">Password:</label><br>
+        <input minlength="8" type="text" name="password" placeholder="enter password" required><br> <br>
+
+        <label for="uemail">Email:</label><br>
+        <input type="email" name="email" placeholder="enter email" required><br> <br>
+        <button class="btn btn-primary " type="submit">Register</button>
+
+    </form>
+
+</body>
+
+</html>
