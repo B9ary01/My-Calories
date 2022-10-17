@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/B9ary01/My_Calorie_Buddy/issues"
   },
-  "homepage": "https://github.com/B9ary01/My_Calorie_Buddy#readme"
+  "homepage": "https://github.com/B9ary01/My_Calorie_Buddy#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
