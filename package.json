@@ -1,0 +1,19 @@
+{
+  "name": "my_calorie_buddy",
+  "version": "1.0.0",
+  "description": "add food and calories",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/B9ary01/My_Calorie_Buddy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/B9ary01/My_Calorie_Buddy/issues"
+  },
+  "homepage": "https://github.com/B9ary01/My_Calorie_Buddy#readme"
+}
