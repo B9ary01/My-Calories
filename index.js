@@ -37,7 +37,10 @@ app.engine('html', require('ejs').renderFile);
 app.get('/foodpage', async (req, res) => {
    res.render('foods/index')
  });
- 
+
+//save page route
+app.get('/savedpage', function (req, res) {
+    res.render('foods/save.html');});
 app.use('/foods', foodRouter);
 
     
