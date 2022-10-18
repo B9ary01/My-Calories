@@ -1,4 +1,5 @@
 module.exports = function (app) {
+     
 
     app.get('/', function (req, res) { res.render('index.html') });
     app.get('/register', function (req, res) { res.render('register.html'); })
@@ -7,12 +8,12 @@ module.exports = function (app) {
 
     var MongoClient = require('mongodb').MongoClient;
     var url = "mongodb+srv://test123:test@cluster0.vef7a.mongodb.net/?retryWrites=true&w=majority"
+//bcrypt enhances password security
+const bcrypt = require('bcrypt');
 
     //register user
     app.post('/registered', function (req, res) {
-        //bcrypt enhances password security
-        var bcrypt = require('bcrypt');
-
+       
         const plainPassword = req.body.password;
         const firstName = req.body.fname;
 
@@ -58,6 +59,51 @@ module.exports = function (app) {
             }
         });
     });
+
+
+
+    //login user
+    app.post('/loggedin', function (req, res) {
+       
+        const plainPassword = req.body.password;
+       
+        MongoClient.connect(url, function (err, client) {
+            if (err) throw err;
+
+            var db = client.db('mydb');
+            //match username saved in the database
+            db.collection('users').findOne({
+                username: req.body.username
+            }).then(function (user) {
+
+                //display invalid message if the username is wrong
+                if (!user) {
+                    res.send('<a style="padding-left:10px;" href=' + 'http://localhost:3000/login' + '>Back</a>' + '<br />' + '<br />'
+                        + "<p style='text-align:center;color:red;font-size:19px;'> Please try again! you entered wrong Username</p>");
+                }
+                else {
+
+                    //compare the password and hashed password from the database
+                    bcrypt.compare(plainPassword, user.password, function (err, result) {
+                        if (result == true) {
+                            //if result is true, display successful and unsuccessful if it is false
+                            res.send('<a style="padding-left:10px;" href=' +
+                                'http://localhost:3000/' + '>Home</a>' + '<br />' +
+                                '<br />' + "<p style='text-align:center;color:#B16627;font-size:19px;'> Login Successful!</p>");
+                        }
+                        else {
+                            res.send('<a style="padding-left:10px;" href=' +
+                                'http://localhost:3000/login' +
+                                '>Back</a>' + '<br />' + '<br />' +
+
+                                "<p style='text-align:center;color:red;font-size:19px;'> Please try again! Your password is not correct, Login UnSuccessful!</p>");
+                        }
+                    });
+                }
+            });
+        });
+    });
+
 
 
 
