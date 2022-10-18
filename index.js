@@ -5,6 +5,7 @@ var path=require('path');
 const mongoose = require('mongoose');
 var MongoClient = require('mongodb').MongoClient;
 var bodyParser= require ('body-parser');
+const foodRouter = require('./routes/foods')
 
 const port = 3000;
 
@@ -30,7 +31,15 @@ require('./routes/main')(app);
 app.set('views',__dirname + '/views');
 app.set('view engine', 'ejs'); 
 app.engine('html', require('ejs').renderFile);
-    
+
+
+//foodpage route displays food data
+app.get('/foodpage', async (req, res) => {
+   res.render('foods/index')
+ });
+ 
+app.use('/foods', foodRouter);
+
     
 app.listen(port, () => console.log(`app is listening on port ${port}!`));
     
