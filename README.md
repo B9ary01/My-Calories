@@ -9,6 +9,9 @@ add food and calories
 
 - Run the  app with `npm run start`
 
+## Live Page
+- https://calorie-buddy.netlify.app/ 
+
 ## References
 
 - https://nodejs.org/en/about/
