@@ -29,7 +29,7 @@ app.get('/registeredfood/', function(req, res, next) {
 var MongoClient = require('mongodb').MongoClient;
 	var regex= new RegExp(req.query["term"],'i'); 
 	MongoClient.connect(url, function (err, client) {
-		var db = client.db ('fooddata');
+		var db = client.db ('test');
 		//search saved food using foodname from the database
 db.collection('foods').find({
 	name:regex},
@@ -57,7 +57,7 @@ res.jsonp(result);
 app.post('/registeredfood/', function(req, res, next) {
 var MongoClient = require('mongodb').MongoClient;
 	MongoClient.connect(url, function (err, client) {
-		var db = client.db ('fooddata');
+		var db = client.db ('test');
 		//check foodname in the foods collection and match the foodname with user input
 db.collection('foods').findOne({name:req.body.name}).then(function (userdata) {
 	if(userdata){
