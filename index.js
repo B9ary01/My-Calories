@@ -7,17 +7,14 @@ const foodRouter = require('./routes/foods')
 const methodOverride = require('method-override')
 var session = require ('express-session');
 var flash = require('express-flash');
-const MongoDBStore = require('connect-mongo')(session);
 var bodyParser= require ('body-parser');
 var path=require('path');
  
-var validator = require ('express-validator');                       
 const expressSanitizer = require('express-sanitizer');
 const app = express()
 const port = 8000;
 
 //connecting to mongodb
-//var url = "mongodb://localhost/members";
 var url="mongodb+srv://user123:user@cluster0.vef7a.mongodb.net/?retryWrites=true&w=majority"
 
 MongoClient.connect(url, function(err, db) {
@@ -26,27 +23,15 @@ MongoClient.connect(url, function(err, db) {
 		  db.close();     });
 
 //connecting to database using mongoose library
-//var myurl = "mongodb://localhost/fooddata";
-
 mongoose.connect(url, {
 	useNewUrlParser: true,
 	 useUnifiedTopology: true 
 });
-/*
-
-const connection=mongoose.connection;
-connection.once('open',()=>{
-console.log('connected..')});*/
 
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('_method'))
 app.use(expressSanitizer());                                                                                          
-/*
-//mongo session
-let mongoStore=new MongoDBStore({
-	mongooseConnection:connection,
-	collection:'sessions'});*/
 
 //added for session management 
 app.use(session({
