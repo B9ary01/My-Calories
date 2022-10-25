@@ -1,0 +1,74 @@
+
+<!DOCTYPE html> <html lang="en"> <head>   <meta charset="UTF-8">
+
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+ crossorigin="anonymous">
+
+<meta http-equiv="X-UA-Compatible" content="ie=edge">                                 
+   
+<title>Food Description page</title> 
+</head> 
+
+<body>
+
+<div style="padding-left:8px;padding-top:8px;">
+<a href="http://localhost:8000/foodpage" class="btn btn-secondary">Food Listpage</a><div>
+
+<h1 style="text-align:center;color:green"> This is Food Description page <h1>
+
+<ul>
+
+<table align="center" cellpadding="1" cellspacing="4" border="4" 
+style="background-color:#f3f2f0;" bgcolor="#f3f2f0;">
+
+<tr style="text-align:center;">
+<th>FoodName</th>
+<th>Typical value</th>
+<th>Unitvalue</th>
+<th>Calories</th>
+<th>Carbs</th>
+<th>Fat</th>
+<th>Protein</th>
+<th>Salt</th>
+<th>Sugar</th>
+<th>Date</th>
+<th><a>
+
+<i class="fa fa-pencil-square-o"
+style="font-size:28px; padding-right:5px; color:lightsmoke">
+</i>Edit</a></th>
+<th></th>
+
+</tr>
+<tr style="padding-top:8px;padding-bottom:5px;padding-right:0;padding-left:5px;" >
+
+<td style="padding-left:5px;padding-right:5px"><%= food.name %> </td>
+<td style="padding-left:5px;padding-right:5px"><%= food.typicalvalues %> </td>    
+<td style="padding-left:5px;padding-right:5px"><%= food.unitvalue %></td>
+<td style="padding-left:5px;padding-right:5px"><%= food.calories %></td>
+<td style="padding-left:5px;padding-right:5px"><%= food.carbs %></td> 
+<td style="padding-left:5px;padding-right:5px"><%= food.fat %></td>
+<td style="padding-left:5px;padding-right:5px"><%= food.protein%></td>
+<td style="padding-left:5px;padding-right:5px"><%= food.salt %></td> 
+<td style="padding-left:5px;padding-right:5px"><%= food.sugar %></td>          
+
+<td style="padding-left:5px;padding-right:5px"><%= food.createdAt.toLocaleDateString() %></td>         
+<td style="padding-left:5px;padding-right:5px"> 
+<a href="/foods/edit/<%= food.id %>" class="btn btn-info">Edit</a></td>
+
+ <td></td>
+</tr>
+
+</table>
+</ul>                         
+
+ </body>
+ </html>                   
+
+
+
+

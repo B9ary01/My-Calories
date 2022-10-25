@@ -1,13 +1,162 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food List</title>
-</head>
-<body>
-    <h1>Food List</h1>
-    
+<!DOCTYPE html> <html lang="en">
+ <head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" 
+href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script src="jquery-3.5.1.min.js"></script>
+
+
+<link rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">     
+
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<title>food list</title>
+
+</head> <body>
+
+<a href="http://localhost:8000/"><i class="fa fa-home"     
+style="font-size:28px; padding-right:5px; color:lightsmoke"></i>Home</a></br>   
+
+  <h1 style="text-align:center;color:green" class="mb-4">Food list</h1>
+  
+  <div class="container-fluid">
+  <div class="container-fluid">  
+   <div class="row text-center">
+   <div class="col-md-6">
+   <a style="margin-top:8px;margin-bottom:8px;" href="/foods/new" class="btn btn-success">Add new Food</a>
+   </div>
+
+ <div class="col-md-6">
+
+<a style="margin-top:8px;margin-bottom:8px;"
+   href=""  class="btn btn-success"><i class="fa fa-shopping-basket" 
+  style="padding-right:6px;"></i>Food basket</a>
+	    
+   </div>
+   </div>
+   </div>
+   </div>
+
+
+ <div class="container">
+   <div class="card mt-4">
+       <div class="card-body">
+   
+ <table align="center" cellpadding="1" cellspacing="4" border="4"
+  style="background-color:#f3f2f0;" bgcolor="#f3f2f0;">                                                                     
+<tr> 
+<th>FoodName</th>   
+<th>TypicalUnit</th>  
+<th>Unitvalue</th>  
+<th>Calories</th>  
+<th>Carbs</th>  
+<th>Fat</th>  
+<th>Protein</th>  
+<th>Salt</th>
+<th>Sugar</th>  
+<th><a> 
+	
+<i class="fa fa-pencil-square-o" 
+    style="font-size:28px; padding-right:5px; color:lightsmoke"> 
+
+</i>Edit</a></th>  
+
+<th><a> 
+<i class="fa fa-trash-o" 
+   style="font-size:28px; padding-right:5px; color:lightsmoke">  
+</i>Delete</a></th> 
+
+<th>
+<a><i class="fa fa-shopping-basket" style="font-size:28px; padding-right:5px; color:lightsmoke">
+</i>Add</a></th>
+
+<th>
+<a><i class="fa fa-info" style="font-size:28px; padding-right:4px; color:lightsmoke">
+</i>Info</a></th>
+
+<th></th>
+
+</tr> 
+
+<!--get food data from database and display in the table-->
+
+<% foods.forEach(food => {  %>
+
+<tr style="padding-top:8px;padding-bottom:5px;padding-right:0;padding-left:5px;text-align:center" >  
+
+
+<td style="padding-left:5px;padding-right:5px"><%= food.name %>
+	</td>
+
+<td style="padding-left:5px;padding-right:5px"><%= food.typicalvalues %>
+	</td>
+
+
+<td style="padding-left:5px;padding-right:5px"><%= food.unitvalue %>
+	</td>
+
+
+<td style="padding-left:5px;padding-right:5px"><%= food.calories %>
+	</td>	
+
+<td style="padding-left:5px;padding-right:5px"><%= food.carbs %>
+</td> 
+
+
+<td style="padding-left:5px;padding-right:5px"><%= food.fat %>
+	</td>
+
+<td style="padding-left:5px;padding-right:5px"><%= food.protein %>
+</td>
+
+<td style="padding-left:5px;padding-right:5px"><%= food.salt %>
+</td>	
+<td style="padding-left:5px;padding-right:5px;"><%= food.sugar %>
+</td>
+<!--edit food using its ID-->
+<td style="padding-left:5px;padding-right:5px">
+<a href="foods/edit/<%= food.id %>" class="btn btn-info">Edit</a></td>
+
+<!--delete food with its related data using ID-->
+<td style="padding-left:5px;padding-right:5px"> 
+<form action="/foods/<%= food.id %>?_method=DELETE" method="POST"  class="d-inline">
+
+<!--onclick alert user before food deletion -->
+<button onclick="return confirm('Are you sure you want to delete this food?');" type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button></form></td>
+
+
+<td style="padding-left:5px;padding-right:5px"> 
+	<a class="addtocart" class="btn btn-primary"
+	href="foods/cart/<%= food.slug %>"><i class="fa fa-plus"></i>Add</a></td>
+<td style="padding-left:5px;padding-right:5px">
+	<a href="foods/<%= food.slug %>" class="btn btn-primary"><i class="fa fa-info">
+</i>nfo</a></td>
+<td></td>
+
+</tr> 
+	
+   </div>
+   </div>
+
+ <% }) %> 
+
+</table>     	
+  </div>
+
+
 </body>
 </html>
+
+

@@ -1,47 +1,49 @@
-<!doctype html>
+
+<!doctype html> 
 <html>
+	<head>
+	<link rel="stylesheet"
+       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-<head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+	<style> 
+body{  
+	background-image: url("img_tree.png");
+        background-repeat: no-repeat;   background-position: right top;
+        background-attachment: fixed; }
+h1 {  text-align:center;
+	color: green;  }
+p {  text-align:center;
+	font-family: verdana;
+      font-size:16px; }
+     form{border: 3px solid #f1f1f3;
+	     text-align:center;
+     }
 
-    <style>
+	
+</style>
 
-        h1 {
-            text-align: center;
-            color: green;
-        }
-
-        p {
-            text-align: center;
-            font-family: verdana;
-            font-size: 16px;
-        }
-
-        form {
-            border: 3px solid #f1f1f3;
-            text-align: center;
-        }
-    </style>
-
-    <title>Login</title>
+<title>Login page</title>
 </head>
 
 <body>
+<a href="http://localhost:8000/"><i class="fa fa-home" style="font-size:28px;padding-right:5px; color:lightsmoke"></i>Home</a></br>
 
-    <p>Please enter username and password to login</p>
+<h1><i class="fa fa-user-circle-o" style="font-size:48px;color:skyblue"></i> This is a Login page</h1>
+<p>Please enter username and password to login</p>
 
-    <form action="/loggedin" method="POST">
-        <label for="uname">Username:</label><br>
-        <input title="Please enter in valid format" type="text" name="username"
-            placeholder="enter username" required><br><br>
+<form action="/loggedin" method="POST">
+	<label for="uname">Username:</label><br>
+	<input id="search-box"  
+	title="Please enter in valid format" type="text" name="username" placeholder="enter username" required ><br><br>
+	
+	<label for="pass">Password:</label><br>
+	<input id="search-box" minlength="8" type="text" name="password" placeholder="enter password" required ><br><br>
+	<button class="btn btn-primary" type="submit" value="Submit" >Login</button>
+</form>
 
-        <label for="pass">Password:</label><br>
-        <input minlength="8" type="text" name="password" placeholder="enter password" required><br><br>
-        <button class="btn btn-primary" type="submit" value="Submit">Login</button>
-    </form>
-
-</body>
-
+</body> 
 </html>
+

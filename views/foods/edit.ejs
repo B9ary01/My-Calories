@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"  
+integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<title>Edit food page</title>
+
+</head>
+<body>
+
+<div class="container-fluid">
+<h1 style="color:green;text-align:center" class="mb-4">Edit Food</h1>
+
+<!--display form with the help of unique id and save data -->
+<form action="/foods/<%= food.id %>?_method=PUT" method="POST">
+ 
+<%- include('_form_fields') %>
+
+</form>
+
+</div> 
+
+</body>
+ </html>
+
+
+
+
+
+
+

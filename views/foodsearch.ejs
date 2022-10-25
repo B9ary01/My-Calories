@@ -1,0 +1,72 @@
+<!doctype html> <html>    <head>
+<title>Foodsearch webpage!</title>
+ <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<link rel="stylesheet" 
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script> 
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
+ <script src="https://code.jquery.com/jquery-1.12.4.js"></script> 
+ <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
+
+ <style>
+body{
+background-image: url("img_tree.png");
+ background-repeat: no-repeat;
+ background-position: right top;        background-attachment: fixed; 
+}
+ h1 {  color: green;                text-align:center; }
+ form{border: 3px solid #f1f1f3;
+	margin-left:27%;
+	margin-right:27%;
+       padding:25px;
+	text-align:center;
+  background-color:#e1e3e6;}
+	p {  font-family: verdana;
+		font-size:16px;        text-align:center;}
+
+</style>
+	
+</head>
+<body>
+<a href="http://localhost:8000/"><i class="fa fa-home" style="font-size:28px;padding-right:5px; color:light smoke"></i>Home</a> 
+</br>
+<h1> This is a Foodsearch Page </h1> 
+ 
+<p>Please enter the food name below:</p>
+
+<form action="registeredfood" method="POST">
+
+<input type="text" id="searchfood" name="name" placeholder="enter food name" required>
+</form> 
+
+<script>
+
+$(function(){
+ $('#searchfood').autocomplete({
+source: function(req,res){
+$.ajax({
+url:"registeredfood/",
+dataType:"jsonp",
+type:"GET",
+ data:req,
+success: function(data){
+res(data)   },
+error: function(err){
+console.log(err.status);         }
+});     },
+minLength:1,
+select: function(event,ui){
+if(ui.item){
+
+ $('#searchfood').val(ui.item.label);
+}     }     });       });       
+</script>
+</body>
+</html>

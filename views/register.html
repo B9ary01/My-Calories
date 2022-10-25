@@ -1,62 +1,54 @@
-<!doctype html>
-<html>
 
-<head>
+<!doctype html> <html>
+	<head> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet"
+     href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-    <style>
-        h1 {
-            color: green;
-            text-align: center;
-        }
 
-        form {
-            border: 3px solid #f1f1f3;
-            margin-left: 30%;
-            margin-right: 30%;
-            padding-left: 63px;
-            padding-right: 63px;
-            text-align: center;
-        }
+<style> 
+body{
+	
+	background-image: url("img_tree.png"); 
+	background-repeat: no-repeat; 
+	background-position: right top; 
+	background-attachment: fixed; }  
+	h1 {  color: green;
+		text-align:center; }
+form{border: 3px solid #f1f1f3;
+margin-left:30%;
+margin-right:30%; padding-left:63px;padding-right:63px; text-align:center;}
 
-        p {
-            font-family: verdana;
-            font-size: 16px;
-            text-align: center;
-        }
-    </style>
+	p {  font-family: verdana;  
+		font-size:16px;
+	text-align:center;} 
+	
+</style>
 
-    <title>Register</title>
-    
-</head>
+<title>Add users</title>   </head>
 
-<body>
+<a href="http://localhost:8000/"><i class="fa fa-home" style="font-size:28px;padding-right:5px; color:lightsmoke"></i>Home</a></br>
+<body>	
+	<h1><bold> This is a Register page</bold> </h1>
 
-    <h1>
-        <bold>Register</bold>
-    </h1>
+<p>Please enter all the required fields to register</p>
 
-    <p>Please enter all the required fields to register</p>
-
-    <form action="/registered" method="POST">
-        <label for="firstname">Firstname:</label><br>
-        <input type="text" name="fname" placeholder="enter firstname" required><br> <br>
-
-        <label for="lastname">Lastname:</label><br>
-        <input type="text" name="lname" placeholder="enter lastname" required><br> <br>
-
-        <label for="uname">Username:</label><br>
-        <input type="text" name="username" placeholder="enter username" required><br> <br>
-        <label for="upass">Password:</label><br>
-        <input minlength="8" type="text" name="password" placeholder="enter password" required><br> <br>
-
-        <label for="uemail">Email:</label><br>
-        <input type="email" name="email" placeholder="enter email" required><br> <br>
-        <button class="btn btn-primary " type="submit">Register</button>
-
-    </form>
-
-</body>
-
+<form action="/registered" method="POST">
+	<label for="firstname">Firstname:</label><br>
+	<input id="search-box" type="text" name="fname" placeholder="enter firstname" required><br> <br>
+	
+	<label for="lastname">Lastname:</label><br>
+	<input id="search-box" type="text" name="lname" placeholder="enter lastname" required><br> <br>
+	
+	<label for="uname">Username:</label><br>
+	<input id="search-box" type="text" name="username" placeholder="enter username" required><br> <br>
+	<label for="upass">Password:</label><br>
+	<input id="search-box" minlength="8" type="text" name="password" placeholder="enter password"required ><br> <br>
+	
+	<label for="uemail">Email:</label><br>
+	<input id="search-box" type="email" name="email" placeholder="enter email" required ><br> <br>
+<button class="btn btn-primary " type="submit">Register</button>
+</form></body>
 </html>
+

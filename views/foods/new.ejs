@@ -1,29 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>  <html lang="en"> <head>                                                                      <meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstr ap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+crossorigin="anonymous">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstr ap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">       
 
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <title>Add Food</title>
+<title>new food</title>            
 
 </head>
+<body> 
 
-<body>
+<div class="container">
+<h1 class="mb-4" style="color:green;text-align:center;">New Food</h1>        
 
-    <div class="container">
-        <h1 class="mb-4" style="color:green;text-align:center;">New Food</h1>
+<form action="/foods" method="POST">  
 
-        <form action="/foods" method="POST">
+<%- include('_form_fields') %> 
+</form>   </div> </body> </html>                   
 
-            <%- include('_form_fields') %>
-        </form>
-    </div>
-</body>
 
-</html>
+
+
+
